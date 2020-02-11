@@ -25,7 +25,7 @@ SECRET_KEY = 'klxjd7w7$wspiftwdel)acrh!x4)(8okzm)n#&uy%gqfd_^-b!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["52.32.138.16"]
+ALLOWED_HOSTS = []
 #"52.32.138.16"
 
 
@@ -61,6 +61,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     )
+}
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100
 }
 
 
