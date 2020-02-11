@@ -4,9 +4,9 @@ from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 # Create your models here.
 
 
-class User(AbstractBaseUser):
-    username = models.CharField(max_length=50, unique=True, null=False)
-    password = models.CharField(max_length=50, null=False)
+# class User(AbstractBaseUser):
+#     username = models.CharField(max_length=50, unique=True, null=False)
+#     password = models.CharField(max_length=50, null=False)
 
 
 class Project(models.Model):

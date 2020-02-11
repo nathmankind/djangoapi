@@ -26,6 +26,7 @@ SECRET_KEY = 'klxjd7w7$wspiftwdel)acrh!x4)(8okzm)n#&uy%gqfd_^-b!'
 DEBUG = True
 
 ALLOWED_HOSTS = ["52.32.138.16"]
+#"52.32.138.16"
 
 
 # Application definition
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = ["52.32.138.16"]
 INSTALLED_APPS = [
     'project_api.apps.ProjectApiConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,14 +53,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework.authentication.TokenAuthentication',
-#     ),
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.IsAuthenticated',
-#     ),
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+
 
 ROOT_URLCONF = 'project.urls'
 
